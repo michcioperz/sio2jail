@@ -41,6 +41,7 @@ public:
 
     struct Settings {
         std::vector<BindMount> bindMounts;
+        bool bindExecutable;
     };
 
     MountNamespaceListener(const Settings& settings, const std::string& executablePath, bool mountProc);
@@ -56,6 +57,7 @@ private:
     std::string executablePath_;
     std::vector<BindMount> bindMounts_;
     bool mountProc_;
+    bool bindExecutable_;
 };
 
 }
